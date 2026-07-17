@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { FaCopy, FaCheck, FaFilePdf } from 'react-icons/fa'
 import { FiFileText } from 'react-icons/fi'
+import { FaCopy, FaCheck, FaFilePdf } from 'react-icons/fa'
 
 export default function MarkdownEditor() {
   const [markdown, setMarkdown] = useState('# Hello World\n\nThis is **bold** and *italic*.\n\n- List item 1\n- List item 2\n\n[Link](https://example.com)')
@@ -42,7 +42,7 @@ export default function MarkdownEditor() {
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
         <FiFileText className="text-krem-500" /> Markdown Editor
       </h2>
-      <p className="text-krem-600 mb-6">Live preview, export HTML, export PDF</p>
+      <p className="text-krem-600 mb-6">Live preview, export HTML</p>
 
       <div className="space-y-4">
         <div>
@@ -58,9 +58,6 @@ export default function MarkdownEditor() {
           <button onClick={renderMarkdown} className="btn-primary">Preview</button>
           <button onClick={exportHtml} className="btn-secondary flex items-center gap-2">
             <FiFileText /> Export HTML
-          </button>
-          <button className="btn-secondary flex items-center gap-2">
-            <FaFilePdf /> Export PDF
           </button>
         </div>
 
