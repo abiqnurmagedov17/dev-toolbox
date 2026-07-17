@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { FaQrcode, FaCopy, FaCheck, FaDownload, FaCamera } from 'react-icons/fa'
+import { FaCopy, FaCheck, FaDownload, FaCamera } from 'react-icons/fa'
+import { FiQrCode } from 'react-icons/fi'
 
 export default function QrToolkit() {
   const [text, setText] = useState('https://github.com')
@@ -13,7 +14,6 @@ export default function QrToolkit() {
   }, [text])
 
   const generateQr = () => {
-    // Simple QR generation using canvas (simplified)
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -21,11 +21,9 @@ export default function QrToolkit() {
     canvas.width = size
     canvas.height = size
     
-    // Clear
     ctx.fillStyle = 'white'
     ctx.fillRect(0, 0, size, size)
     
-    // Draw QR-like pattern (simplified for demo)
     const cellSize = size / 25
     const grid = generateQrGrid(text, 25)
     
@@ -38,7 +36,6 @@ export default function QrToolkit() {
       }
     }
     
-    // Position markers (QR corner squares)
     const drawMarker = (x, y) => {
       const s = 5 * cellSize
       ctx.fillStyle = '#3d2e1e'
@@ -56,7 +53,6 @@ export default function QrToolkit() {
   }
 
   const generateQrGrid = (text, size) => {
-    // Deterministic simple pattern based on text hash
     let hash = 0
     for (let i = 0; i < text.length; i++) {
       hash = (hash * 31 + text.charCodeAt(i)) % 1000000
@@ -90,7 +86,7 @@ export default function QrToolkit() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaQrcode className="text-krem-500" /> QR Code Toolkit
+        <FiQrCode className="text-krem-500" /> QR Code Toolkit
       </h2>
       <p className="text-krem-600 mb-6">Generate QR code, scan QR, download PNG/SVG</p>
 
