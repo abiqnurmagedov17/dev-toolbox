@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { FaCopy, FaCheck } from 'react-icons/fa'
 import { FiLink } from 'react-icons/fi'
+import { FaCopy, FaCheck } from 'react-icons/fa'
 
 export default function UrlToolbox() {
   const [input, setInput] = useState('')
