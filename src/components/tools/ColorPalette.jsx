@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { FiPalette } from 'react-icons/fi'
-import { FaCopy, FaCheck } from 'react-icons/fa'
+import { FaCopy, FaCheck, FaPalette } from 'react-icons/fa' // ✅ Menggunakan FaPalette dari react-icons/fa
 
 export default function ColorPalette() {
   const [color, setColor] = useState('#b0957a')
@@ -49,7 +48,8 @@ export default function ColorPalette() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FiPalette className="text-krem-500" /> Color Palette Generator
+        {/* ✅ Menggunakan FaPalette di sini */}
+        <FaPalette className="text-krem-500" /> Color Palette Generator
       </h2>
       <p className="text-krem-600 mb-6">HEX ↔ RGB ↔ HSL, Gradient generator, copy CSS</p>
 
