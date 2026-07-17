@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { FaClock, FaCopy, FaCheck } from 'react-icons/fa'
+import { FaCopy, FaCheck } from 'react-icons/fa'
+import { FiClock } from 'react-icons/fi'
 
 export default function CronBuilder() {
   const [fields, setFields] = useState({ minute: '*', hour: '*', day: '*', month: '*', weekday: '*' })
@@ -55,7 +56,7 @@ export default function CronBuilder() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaClock className="text-krem-500" /> Cron Expression Builder
+        <FiClock className="text-krem-500" /> Cron Expression Builder
       </h2>
       <p className="text-krem-600 mb-6">Membuat dan memahami cron expression</p>
 
