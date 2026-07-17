@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { FaCopy, FaCheck } from 'react-icons/fa'
 import { FiPalette } from 'react-icons/fi'
+import { FaCopy, FaCheck } from 'react-icons/fa'
 
 export default function ColorPalette() {
   const [color, setColor] = useState('#b0957a')
