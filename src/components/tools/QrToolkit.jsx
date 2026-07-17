@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { FiQrCode } from 'react-icons/fi'
-import { FaCopy, FaCheck, FaDownload, FaCamera } from 'react-icons/fa'
+// ✅ FiQrCode dihapus dari sini, dan FaQrcode ditambahkan ke baris di bawah
+import { FaCopy, FaCheck, FaDownload, FaCamera, FaQrcode } from 'react-icons/fa'
 
 export default function QrToolkit() {
   const [text, setText] = useState('https://github.com')
@@ -86,7 +86,8 @@ export default function QrToolkit() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FiQrCode className="text-krem-500" /> QR Code Toolkit
+        {/* ✅ Menggunakan FaQrcode di sini */}
+        <FaQrcode className="text-krem-500" /> QR Code Toolkit
       </h2>
       <p className="text-krem-600 mb-6">Generate QR code, download PNG</p>
 
