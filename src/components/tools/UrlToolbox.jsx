@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { FaLink, FaCopy, FaCheck } from 'react-icons/fa'
+import { FaCopy, FaCheck } from 'react-icons/fa'
+import { FiLink } from 'react-icons/fi'
 
 export default function UrlToolbox() {
   const [input, setInput] = useState('')
@@ -45,7 +46,7 @@ export default function UrlToolbox() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaLink className="text-krem-500" /> URL Toolbox
+        <FiLink className="text-krem-500" /> URL Toolbox
       </h2>
       <p className="text-krem-600 mb-6">Encode/decode URL, parse query string, UTM builder</p>
 
