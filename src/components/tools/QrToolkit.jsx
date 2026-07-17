@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { FaCopy, FaCheck, FaDownload, FaCamera } from 'react-icons/fa'
 import { FiQrCode } from 'react-icons/fi'
+import { FaCopy, FaCheck, FaDownload, FaCamera } from 'react-icons/fa'
 
 export default function QrToolkit() {
   const [text, setText] = useState('https://github.com')
@@ -73,7 +73,7 @@ export default function QrToolkit() {
     if (!canvas) return
     const link = document.createElement('a')
     link.download = `qrcode.${format}`
-    link.href = format === 'png' ? canvas.toDataURL('image/png') : canvas.toDataURL('image/svg+xml')
+    link.href = canvas.toDataURL('image/png')
     link.click()
   }
 
@@ -88,7 +88,7 @@ export default function QrToolkit() {
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
         <FiQrCode className="text-krem-500" /> QR Code Toolkit
       </h2>
-      <p className="text-krem-600 mb-6">Generate QR code, scan QR, download PNG/SVG</p>
+      <p className="text-krem-600 mb-6">Generate QR code, download PNG</p>
 
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
@@ -110,13 +110,7 @@ export default function QrToolkit() {
         {qrCode && (
           <div className="flex flex-wrap gap-2 justify-center">
             <button onClick={() => downloadQr('png')} className="btn-primary flex items-center gap-2">
-              <FaDownload /> PNG
-            </button>
-            <button onClick={() => downloadQr('svg')} className="btn-secondary flex items-center gap-2">
-              <FaDownload /> SVG
-            </button>
-            <button className="btn-secondary flex items-center gap-2">
-              <FaCamera /> Scan QR
+              <FaDownload /> Download PNG
             </button>
           </div>
         )}
