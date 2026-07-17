@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { FaPalette, FaCopy, FaCheck } from 'react-icons/fa'
+import { FaCopy, FaCheck } from 'react-icons/fa'
+import { FiPalette } from 'react-icons/fi'
 
 export default function ColorPalette() {
   const [color, setColor] = useState('#b0957a')
-  const [mode, setMode] = useState('hex')
   const [copied, setCopied] = useState(false)
   const [gradient, setGradient] = useState('linear-gradient(135deg, #b0957a, #eaddca)')
 
@@ -49,7 +49,7 @@ export default function ColorPalette() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaPalette className="text-krem-500" /> Color Palette Generator
+        <FiPalette className="text-krem-500" /> Color Palette Generator
       </h2>
       <p className="text-krem-600 mb-6">HEX ↔ RGB ↔ HSL, Gradient generator, copy CSS</p>
 
