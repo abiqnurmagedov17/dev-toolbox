@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { FaCopy, FaCheck } from 'react-icons/fa'
 import { FiClock } from 'react-icons/fi'
+import { FaCopy, FaCheck } from 'react-icons/fa'
 
 export default function CronBuilder() {
   const [fields, setFields] = useState({ minute: '*', hour: '*', day: '*', month: '*', weekday: '*' })
