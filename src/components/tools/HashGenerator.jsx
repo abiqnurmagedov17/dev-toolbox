@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { FaHash, FaCopy, FaCheck } from 'react-icons/fa'
+import { FaCopy, FaCheck } from 'react-icons/fa'
+import { FiHash } from 'react-icons/fi'
 
 export default function HashGenerator() {
   const [input, setInput] = useState('')
@@ -30,7 +31,7 @@ export default function HashGenerator() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaHash className="text-krem-500" /> Hash Generator
+        <FiHash className="text-krem-500" /> Hash Generator
       </h2>
       <p className="text-krem-600 mb-6">MD5, SHA-1, SHA-256, SHA-512</p>
 
