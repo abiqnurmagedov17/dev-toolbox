@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { FaCopy, FaCheck, FaSync } from 'react-icons/fa'
 import { FiHash } from 'react-icons/fi'
+import { FaCopy, FaCheck, FaSync } from 'react-icons/fa'
 
 export default function UuidGenerator() {
   const [uuids, setUuids] = useState([])
@@ -16,10 +16,12 @@ export default function UuidGenerator() {
         return v4.toString(16)
       })
     } else if (v === 'v7') {
+      // Simple v7-like (not RFC compliant, just for demo)
       const time = Date.now().toString(16).padStart(12, '0')
       const rand = Math.random().toString(16).substring(2, 10)
       return `${time.substring(0, 8)}-${time.substring(8, 12)}-7${rand.substring(0, 3)}-${rand.substring(3, 7)}-${rand.substring(7, 11)}${Math.random().toString(16).substring(2, 6)}`
     }
+    // NanoID-like
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     let result = ''
     for (let i = 0; i < 21; i++) {
@@ -53,7 +55,7 @@ export default function UuidGenerator() {
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
         <FiHash className="text-krem-500" /> UUID Generator
       </h2>
-      <p className="text-krem-600 mb-6">UUID v4, v7, NanoID, batch generate</p>
+      <p className="text-krem-600 mb-6">UUID v4, v7 (demo), NanoID (demo), batch generate</p>
 
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2 items-center">
@@ -63,8 +65,8 @@ export default function UuidGenerator() {
             className="input-field w-32"
           >
             <option value="v4">UUID v4</option>
-            <option value="v7">UUID v7</option>
-            <option value="nanoid">NanoID</option>
+            <option value="v7">UUID v7 (demo)</option>
+            <option value="nanoid">NanoID (demo)</option>
           </select>
           <input
             type="number"
@@ -85,7 +87,7 @@ export default function UuidGenerator() {
         </div>
 
         {uuids.length > 0 && (
-          <div className="space-y-2">
+          <div className="space-y-2 max-h-96 overflow-y-auto">
             {uuids.map((uuid, i) => (
               <div key={i} className="flex justify-between items-center p-3 bg-krem-50/80 rounded-xl border border-krem-200">
                 <span className="font-mono text-sm break-all">{uuid}</span>
