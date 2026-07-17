@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { 
-  FaCode, FaKey, FaLock, FaHash, FaPalette, 
-  FaClock, FaLink, FaMarkdown, FaNetworkWired,
-  FaQrcode, FaUuid, FaShieldAlt, FaBars, FaTimes 
+  FaCode, FaKey, FaLock, FaCopy, FaCheck, FaSync,
+  FaLink, FaNetworkWired, FaQrcode, FaShieldAlt,
+  FaBars, FaTimes, FaPalette, FaClock
 } from 'react-icons/fa'
+import { FiHash, FiFileText, FiLink } from 'react-icons/fi'
 import JsonTool from './components/tools/JsonTool'
 import JwtDecoder from './components/tools/JwtDecoder'
 import Base64Tool from './components/tools/Base64Tool'
@@ -21,14 +22,14 @@ const tools = [
   { id: 'json', name: 'JSON Formatter', icon: FaCode, component: JsonTool },
   { id: 'jwt', name: 'JWT Decoder', icon: FaKey, component: JwtDecoder },
   { id: 'base64', name: 'Base64 Toolbox', icon: FaLock, component: Base64Tool },
-  { id: 'hash', name: 'Hash Generator', icon: FaHash, component: HashGenerator },
+  { id: 'hash', name: 'Hash Generator', icon: FiHash, component: HashGenerator },
   { id: 'color', name: 'Color Palette', icon: FaPalette, component: ColorPalette },
   { id: 'cron', name: 'Cron Builder', icon: FaClock, component: CronBuilder },
-  { id: 'url', name: 'URL Toolbox', icon: FaLink, component: UrlToolbox },
-  { id: 'markdown', name: 'Markdown Editor', icon: FaMarkdown, component: MarkdownEditor },
+  { id: 'url', name: 'URL Toolbox', icon: FiLink, component: UrlToolbox },
+  { id: 'markdown', name: 'Markdown Editor', icon: FiFileText, component: MarkdownEditor },
   { id: 'http', name: 'HTTP Tester', icon: FaNetworkWired, component: HttpTester },
   { id: 'qr', name: 'QR Toolkit', icon: FaQrcode, component: QrToolkit },
-  { id: 'uuid', name: 'UUID Generator', icon: FaUuid, component: UuidGenerator },
+  { id: 'uuid', name: 'UUID Generator', icon: FiHash, component: UuidGenerator },
   { id: 'password', name: 'Password Generator', icon: FaShieldAlt, component: PasswordGenerator },
 ]
 
