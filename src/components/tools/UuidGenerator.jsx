@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { FaUuid, FaCopy, FaCheck, FaSync } from 'react-icons/fa'
+import { FaCopy, FaCheck, FaSync } from 'react-icons/fa'
+import { FiHash } from 'react-icons/fi'
 
 export default function UuidGenerator() {
   const [uuids, setUuids] = useState([])
@@ -19,7 +20,6 @@ export default function UuidGenerator() {
       const rand = Math.random().toString(16).substring(2, 10)
       return `${time.substring(0, 8)}-${time.substring(8, 12)}-7${rand.substring(0, 3)}-${rand.substring(3, 7)}-${rand.substring(7, 11)}${Math.random().toString(16).substring(2, 6)}`
     }
-    // NanoID
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     let result = ''
     for (let i = 0; i < 21; i++) {
@@ -51,7 +51,7 @@ export default function UuidGenerator() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaUuid className="text-krem-500" /> UUID Generator
+        <FiHash className="text-krem-500" /> UUID Generator
       </h2>
       <p className="text-krem-600 mb-6">UUID v4, v7, NanoID, batch generate</p>
 
