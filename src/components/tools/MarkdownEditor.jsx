@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { FaMarkdown, FaCopy, FaCheck, FaFilePdf, FaFileCode } from 'react-icons/fa'
+import { FaCopy, FaCheck, FaFilePdf } from 'react-icons/fa'
+import { FiFileText } from 'react-icons/fi'
 
 export default function MarkdownEditor() {
   const [markdown, setMarkdown] = useState('# Hello World\n\nThis is **bold** and *italic*.\n\n- List item 1\n- List item 2\n\n[Link](https://example.com)')
@@ -7,7 +8,6 @@ export default function MarkdownEditor() {
   const [copied, setCopied] = useState(false)
 
   const renderMarkdown = () => {
-    // Simple markdown to HTML (basic)
     let html = markdown
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
@@ -40,7 +40,7 @@ export default function MarkdownEditor() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-krem-800 mb-2 flex items-center gap-2">
-        <FaMarkdown className="text-krem-500" /> Markdown Editor
+        <FiFileText className="text-krem-500" /> Markdown Editor
       </h2>
       <p className="text-krem-600 mb-6">Live preview, export HTML, export PDF</p>
 
@@ -57,7 +57,7 @@ export default function MarkdownEditor() {
         <div className="flex flex-wrap gap-2">
           <button onClick={renderMarkdown} className="btn-primary">Preview</button>
           <button onClick={exportHtml} className="btn-secondary flex items-center gap-2">
-            <FaFileCode /> Export HTML
+            <FiFileText /> Export HTML
           </button>
           <button className="btn-secondary flex items-center gap-2">
             <FaFilePdf /> Export PDF
